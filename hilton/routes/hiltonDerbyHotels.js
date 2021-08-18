@@ -1,4 +1,4 @@
-[
+const Hotels = [
     {
         "hotelId": "SJCSC",
         "hotelName": "Hilton Santa Clara",
@@ -41519,3 +41519,5 @@
         "status": "Deactived"
     }
 ]
+
+module.exports = Hotels
