@@ -1029,16 +1029,17 @@ let uncounter = 0;
 
 console.log('TOTAL LIST FROM DASHBOARD INCLUDING HILTON AND HAMPTON INN : ', hiltonList.length);
 filteredDashboardHiltonList.map(hotel => {
-  parsedFilteredDashboardHiltonList.push(hotel.toLowerCase());
+  hotel.toLocaleLowerCase();
+  
+  parsedFilteredDashboardHiltonList.push(hotel.replace(/[^a-zA-Z ]/g, " "));
 })
 
 
 Hotels.map(hotel => {
-
-
   if(hotel.hotelName){
-    hiltonHotelNames.push(hotel.hotelName)
+    hiltonHotelNames.push(hotel.hotelName.replace(/[^a-zA-Z ]/g, " "))
   }else{
+    others.push(hotel);
     console.log('UNDEFINED ::: ', hotel.hotelName);
   }
   // if (hotel.hotelName) {
@@ -1155,8 +1156,10 @@ router.get('/', (req, res, next) => {
   // })
  
   let dashboardWithoutDup =  [...new Set(parsedFilteredDashboardHiltonList)];
+
   console.log('Dashboard filtered list ::::: ', dashboardWithoutDup.length)
   console.log('THE TOTAL AMOUNT OF DASHBOARD HOTELS THAT WERE IN THE DERBY HOTEL LIST ARE ::::: ', counter)
+  
   console.log('THE TOTAL AMOUNT OF UNDEFINED HOTELS ON DERBYS LIST IS :::::: ', uncounter);
   // console.log('MISSING HOTEL LIST COUNT : ',  missingHotels );
   // console.log('DUPLICATES LIST  IS  : ', duplicates);
@@ -1192,13 +1195,13 @@ let finalz = hiltonHotelNames.filter(val => !comparison.includes(val));
 
 
 
-  console.log('THE FINAL COMPARISON ::::: ', comparison.length);
+  console.log('THE FINAL COMPARISON ::::: ', comparison);
 console.log('SHIT SHIT HI :::  ', finalz.length)
   // let final = [...new Set(result)];
   // console.log('THE FINAL REUSLT :::: ', final.length)
   // console.log('THE MISSING HOTELLSL : ', missingHotels)
   // console.log('RANDOM RANDOM : ', hello.l)
-  res.status(200).json(hiltonHotelNames);
+  res.status(200).json(result);
 });
 
 router.get('/ref', (req, res, next) => {
