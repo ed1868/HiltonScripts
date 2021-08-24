@@ -1050,7 +1050,7 @@ console.log('total of hotels after filtering :::::  ', dashboardWithoutDup.lengt
 
 Hotels.map(hotel => {
   if(hotel.hotelName){
-    hiltonHotelNames.push(hotel.hotelName);
+    hiltonHotelNames.push(hotel.hotelId);
   }
 //   let positive = true
 //  let name = "";
