@@ -1049,19 +1049,22 @@ console.log('total of hotels after filtering :::::  ', dashboardWithoutDup.lengt
 
 
 Hotels.map(hotel => {
-  let positive = true
- let name = "";
-  if(hotel.hotelName && positive){
-     name= hotel.hotelName.replace(/[^a-zA-Z ]/g, " ")
+  if(hotel.hotelName){
+    hiltonHotelNames.push(hotel.hotelName);
   }
+//   let positive = true
+//  let name = "";
+//   if(hotel.hotelName && positive){
+//      name= hotel.hotelName.replace(/[^a-zA-Z ]/g, " ")
+//   }
   
-  if(hotel.hotelName && !dashboardWithoutDup.includes(hotel.hotelName)){
-    hiltonHotelNames.push(name);
-  }else{
+//   if(hotel.hotelName && !dashboardWithoutDup.includes(hotel.hotelName)){
+//     hiltonHotelNames.push(name);
+//   }else{
   
-    others.push(hotel);
-    // console.log('UNDEFINED ::: ', hotel.hotelName);
-  }
+//     others.push(hotel);
+//     // console.log('UNDEFINED ::: ', hotel.hotelName);
+//   }
   // if (hotel.hotelName) {
   //   let currentHotel = hotel.hotelName.toLowerCase();
 
