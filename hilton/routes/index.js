@@ -1016,7 +1016,7 @@ let filteredDashboardHiltonList = [
 ]
 
 
-console.log("Number of hotels unfiltereD: :: ", filteredDashboardHiltonList.length);
+// console.log("Number of hotels unfiltereD: :: ", filteredDashboardHiltonList.length);
 
 let parsedFilteredDashboardHiltonList = [];
 // let filteredDashboardHiltonList = [];
@@ -1030,7 +1030,7 @@ let hello = [];
 let counter = 0;
 let uncounter = 0;
 
-console.log('TOTAL LIST FROM DASHBOARD INCLUDING HILTON AND HAMPTON INN : ', hiltonList.length);
+// console.log('TOTAL LIST FROM DASHBOARD INCLUDING HILTON AND HAMPTON INN : ', hiltonList.length);
 filteredDashboardHiltonList.map(hotel => {
   // console.log("ENTRO")
   hotel.toLocaleLowerCase();
@@ -1044,7 +1044,7 @@ filteredDashboardHiltonList.map(hotel => {
 let dashboardWithoutDup =  [...new Set(parsedFilteredDashboardHiltonList)];
 
 
-console.log('total of hotels after filtering :::::  ', dashboardWithoutDup.length);
+// console.log('total of hotels after filtering :::::  ', dashboardWithoutDup.length);
 
 
 
@@ -1182,11 +1182,11 @@ router.get('/', (req, res, next) => {
 
   
   // console.log('THE TOTAL AMOUNT OF DASHBOARD HOTELS THAT WERE IN THE DERBY HOTEL LIST ARE ::::: ', counter)
-  console.log('othersss: ', others.length)
-  console.log('THE TOTAL AMOUNT OF UNDEFINED HOTELS ON DERBYS LIST IS :::::: ', uncounter);
-  // console.log('MISSING HOTEL LIST COUNT : ',  missingHotels );
-  // console.log('DUPLICATES LIST  IS  : ', duplicates);
-  console.log('THE DUPLICATES LIST TOTAL AT : ', duplicates.length);
+  // console.log('othersss: ', others.length)
+  // console.log('THE TOTAL AMOUNT OF UNDEFINED HOTELS ON DERBYS LIST IS :::::: ', uncounter);
+  // // console.log('MISSING HOTEL LIST COUNT : ',  missingHotels );
+  // // console.log('DUPLICATES LIST  IS  : ', duplicates);
+  // console.log('THE DUPLICATES LIST TOTAL AT : ', duplicates.length);
 
   //REMOVE DUPLICATE FUNCTION
   // function removeDuplicates(array) {
@@ -1224,7 +1224,7 @@ router.get('/', (req, res, next) => {
   // console.log('THE FINAL REUSLT :::: ', final.length)
   // console.log('THE MISSING HOTELLSL : ', missingHotels)
   // console.log('RANDOM RANDOM : ', hello.l)
-  console.log(' FINAL LIST LENGTH ::: ', hiltonHotelNames.length);
+  // console.log(' FINAL LIST LENGTH ::: ', hiltonHotelNames.length);
   res.status(200).json(hiltonHotelNames);
 });
 
