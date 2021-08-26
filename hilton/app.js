@@ -9820,7 +9820,7 @@ async function getAllHotels() {
 
 
 
-getAllHotels()
+// getAllHotels()
 
 
 // });
