@@ -10158,7 +10158,7 @@ activateHotel = (id) => {
   console.log('el id : ', id)
   axios({
     method: "post",
-    url: "https://go-us.derbysoftsec.com/api/go/shoppingengine/v4/hotels/HILTON/setup",
+    url: "https://go-us.derbysoftsec.com/api/go/shoppingengine/v4/hotels/MARRIOTT/setup",
     headers: {
       Authorization:
         "zCc23JLtqCPO2Lzn9S000001f6bce9a3dbad4505b04bfc014a6429b6",
@@ -10175,7 +10175,7 @@ activateHotel = (id) => {
       },
       hotels: [
         {
-          supplierId: "HILTON",
+          supplierId: "MARRIOTT",
           hotelId: id,
           status: "Actived",
         },
@@ -10228,20 +10228,21 @@ activateHotel = (id) => {
 };
 
 
-async function getActivation(hotelId) {
-  await activateHotel(hotelId)
-}
+activateHotel('NYCCP')
+// async function getActivation(hotelId) {
+//   await activateHotel(hotelId)
+// }
 
-async function getAllHotels() {
-  const apiPromises = hiltonHotelten.map(getActivation)
+// async function getAllHotels() {
+//   const apiPromises = hiltonHotelten.map(getActivation)
 
-  await Promise.all(apiPromises)
-}
-
-
+//   await Promise.all(apiPromises)
+// }
 
 
-getAllHotels()
+
+
+// getAllHotels()
 
 
 // });
