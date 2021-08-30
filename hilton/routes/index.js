@@ -34541,16 +34541,6 @@ let harleysList = [
 /* GET home page. */
 router.get('/', (req, res, next) => {
 
-  let listToCheck = [];
-
-  harleysList.map(hotel => {
-    if (hotel.isDerbyGood == "0" && hotel.isIBSGood == "1") {
-      listToCheck.push(hotel);
-    }
-
-    console.log('Passed the vibe check');
-  });
-
 
 
   
@@ -34617,7 +34607,7 @@ router.get('/', (req, res, next) => {
   // console.log('THE MISSING HOTELLSL : ', missingHotels)
   // console.log('RANDOM RANDOM : ', hello.l)
   // console.log(' FINAL LIST LENGTH ::: ', hiltonHotelNames.length);
-  res.status(200).json(listToCheck);
+  res.status(200).json(hiltonHotelNames)
 });
 
 router.get('/ref', (req, res, next) => {
