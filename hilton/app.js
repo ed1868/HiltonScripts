@@ -12955,6 +12955,207 @@ let sevenToThousand = [
   "CLEOV",
   "RTLHH"
 ]
+
+
+let derbyNoratesMarriottList = [
+  "ABQFI",
+  "ABERI",
+  "ADBSI",
+  "ABECY",
+  "ABQRI",
+  "ATLCU",
+  "ATLBW",
+  "ATLAN",
+  "ATLNP",
+  "ATLJC",
+  "ATLMN",
+  "ATLMW",
+  "ATLWS",
+  "ATLTN",
+  "ATLTC",
+  "AUSTW",
+  "BHMSC",
+  "BNAMF",
+  "BNATN",
+  "BOSFB",
+  "BOSDV",
+  "BOSWB",
+  "BOSML",
+  "BOSTD",
+  "BOSST",
+  "BUFAM",
+  "BVUCH",
+  "BUDAK",
+  "BWIRI",
+  "BWICL",
+  "BVUSI",
+  "CAIHM",
+  "CAIHM",
+  "CANAL",
+  "CHACH",
+  "CHIAN",
+  "CHIDN",
+  "CHIRW",
+  "CHIRD",
+  "CHITS",
+  "CIDIC",
+  "CLEAP",
+  "CLLFP",
+  "CLTUN",
+  "CPTSB",
+  "DACFP",
+  "DALMK",
+  "CWBFP",
+  "DALCE",
+  "DALCC",
+  "DALRH",
+  "DALRS",
+  "DFWFC",
+  "DOHMC",
+  "DTWRI",
+  "DTWNV",
+  "DTWAB",
+  "DTWTS",
+  "DURED",
+  "DXBAE",
+  "EVVPC",
+  "EWRMW",
+  "EWRTC",
+  "EWRPY",
+  "EWRNJ",
+  "GRJFO",
+  "HAMTX",
+  "GYDAK",
+  "GYDBS",
+  "GYDIB",
+  "HFEWI",
+  "HAVFP",
+  "HOUTS",
+  "HOUTC",
+  "HOUWH",
+  "IADFL",
+  "HZVPR",
+  "HVNFP",
+  "HVNFP",
+  "IEVAL",
+  "ILGWC",
+  "ILGSW",
+  "ISPFP",
+  "INTUP",
+  "JKTLC",
+  "KOASI",
+  "LASNW",
+  "LAXCT",
+  "LAXCA",
+  "LEBEL",
+  "LEDCY",
+  "LIMFP",
+  "LIHHI",
+  "LONPM",
+  "MANBR",
+  "MCICA",
+  "MEXSI",
+  "MEXSI",
+  "MIACO",
+  "MKEBC",
+  "MIAML",
+  "MLICH",
+  "MSPED",
+  "MRUXR",
+  "MSPMD",
+  "MSYHM",
+  "MTTFI",
+  "MSYRI",
+  "MVDSI",
+  "NKGLC",
+  "NYCEA",
+  "NTYPR",
+  "NKGSI",
+  "NYCXM",
+  "NYCRW",
+  "NYCWD",
+  "NYCWD",
+  "NYCMS",
+  "OAKMV",
+  "OAKRM",
+  "OAKCP",
+  "ORFTS",
+  "ORNSI",
+  "OXRCH",
+  "PARWH",
+  "PBIBC",
+  "PHFTS",
+  "PHLAT",
+  "PHXCC",
+  "PHXCL",
+  "PHXRI",
+  "PHXTE",
+  "PHXMY",
+  "PHXRT",
+  "PHXRS",
+  "PHXTO",
+  "PLZMA",
+  "PRGAK",
+  "PRYHA",
+  "PRYWA",
+  "PTYPA",
+  "PTYBB",
+  "RDUAP",
+  "RDURT",
+  "RECSI",
+  "RDURD",
+  "RICTS",
+  "RNORI",
+  "ROMEX",
+  "RUTLC",
+  "SATRW",
+  "SAVAD",
+  "SANRB",
+  "SATFP",
+  "SDKFP",
+  "SEZMD",
+  "SELSI",
+  "SELMD",
+  "SFOCD",
+  "SFORW",
+  "SFOLS",
+  "SFOLS",
+  "SFOOP",
+  "SFORI",
+  "SFOLA",
+  "SFOPC",
+  "SHABR",
+  "SINMD",
+  "SJDSI",
+  "SJDSI",
+  "SNAFC",
+  "SNAFV",
+  "SLWFI",
+  "SNALH",
+  "SPACH",
+  "STFSI",
+  "TKDPR",
+  "TGUMC",
+  "TNAJS",
+  "TSNJX",
+  "VCEAK",
+  "USMMD",
+  "WASAR",
+  "WASKB",
+  "WASBV",
+  "WASTS",
+  "WASPT",
+  "WASWH",
+  "YBYCY",
+  "YKAFP",
+  "YVRGW",
+  "ZRHFP",
+  "ZISMD",
+  "SHADF",
+  "CPTCA",
+  "CORSI",
+  "BDLCT"
+]
 let batchActive = [];
 
 let hotelsActivated = 0;
@@ -12967,7 +13168,7 @@ activateHotel = (id) => {
   console.log('el id : ', id)
   axios({
     method: "post",
-    url: "https://go-us.derbysoftsec.com/api/go/shoppingengine/v4/hotels/HILTON/setup",
+    url: "https://go-us.derbysoftsec.com/api/go/shoppingengine/v4/hotels/MARRIOTT/setup",
     headers: {
       Authorization:
         "zCc23JLtqCPO2Lzn9S000001f6bce9a3dbad4505b04bfc014a6429b6",
@@ -12984,7 +13185,7 @@ activateHotel = (id) => {
       },
       hotels: [
         {
-          supplierId: "HILTON",
+          supplierId: "MARRIOTT",
           hotelId: id,
           status: "Actived",
         },
@@ -13011,24 +13212,36 @@ activateHotel = (id) => {
 
     })
     .catch((err) => {
+
+      if(err && err.code == "ECONNREFUSED"){
+        console.log(':::::::::::::ECONNREFUSED ERROR :::::::::::::: ', err)
+        setTimeout(function () {
+          console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', id)
+          activateHotel(id)
+        }, 6000)
+      }
       if (err && err.code == "ETIMEDOUT") {
-        console.log(':::::::::::::UNDEFINED ERROR :::::::::::::: ', err)
+        console.log(':::::::::::::ETIMEDOUT ERROR :::::::::::::: ', err)
         setTimeout(function () {
           console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', id)
           activateHotel(id)
         }, 6000)
 
       }
-      if (err && err.response.status) {
-        if (err.response.status == "429") {
-          setTimeout(function () {
-            console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', id)
-            activateHotel(id)
-          }, 6000)
+
+      if(err && err.response){
+        if (err.response.status) {
+          if (err.response.status == "429") {
+            setTimeout(function () {
+              console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', id)
+              activateHotel(id)
+            }, 6000)
+          }
         }
       }
-      else {
-        console.log('THE FUCKING BIG ERROR: ', err)
+    
+      if(err && !err.response){
+        console.log('no error response ')
       }
     });
 
@@ -13042,7 +13255,7 @@ async function getActivation(hotelId) {
 }
 
 async function getAllHotels() {
-  const apiPromises = bust.map(getActivation)
+  const apiPromises = derbyNoratesMarriottList.map(getActivation)
 
   await Promise.all(apiPromises)
 }
@@ -13050,8 +13263,9 @@ async function getAllHotels() {
 
 
 
-getAllHotels()
+// getAllHotels()
 
+// activateHotel("ABQFI");
 
 // });
 
