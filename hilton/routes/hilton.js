@@ -4,18 +4,38 @@ let Hotels = require('./hiltonDerbyHotels');
 const axios = require('axios');
 
 
+const hiltonVegasArray = [
+    "LASHH",
+    "LASCD",
+    "LASCF",
+    "LASVG"
+];
+
+const hiltonAllInclusiveResorts = [
+    'CUNCI',
+    'CUNHI',
+    'CURRY',
+    'CZMPC',
+    'CZMPD',
+    'LRMDO',
+    'LRMFM',
+    'MBJRH',
+    'PVRPA',
+    'PVRPV'
+]
 
 const firstTenHilton = [
-    'MSYRV',
-    'PHXRS',
-    'DXBVH',
-    'DXBAH',
-    'SJDWA',
-    'CNYCU',
-    'AVLCU',
-    'AVLBP',
-    'LRMFM',
-    'CUNCU'
+    'LAXMA',
+    'NYCMM',
+    'NYCHS',
+    'EWRHD',
+    'CHINP',
+    'MRYES',
+    'SNACM',
+    'ONAIS',
+    'STAOC',
+    'MESWH',
+    'KOAHW'
 ]
 const hiltonHotelIdList = [
     'MSYRV',
@@ -519,7 +539,7 @@ let hotelsNotFound = [];
 //     let checkOut = "11/15/2021";
 
 //     let hotelId = id;
-    
+
 //     console.log('HOTEL ID BEING QUERIED : ', hotelId);
 //     axios({
 //         method: "post",
@@ -606,7 +626,7 @@ let hotelsNotFound = [];
 //                         console.log(':::::::::::::SERVER ERROR :::::::::::::: ', err.response.status);
 //                         console.log('err data :: ', err.response.data);
 //                         if (err.response.data.errorCode == "HotelNotFound") {
-    
+
 //                             console.log('THIS HOTEL WAS NOT FOUND:::: ', hotelId);
 //                             hotelsNotFound.push(hotelId)
 //                         } else {
@@ -615,26 +635,26 @@ let hotelsNotFound = [];
 //                                 availabilitySearchNovember(hotelId)
 //                             }, 9000)
 //                         }
-    
+
 //                     }
-                    
-    
+
+
 //                     if (err.response.status == "429") {
 //                         console.log(':::::::::::::SERVER ERROR TOO MANY ATTEMPTS :::::::::::::: ', err.response.status);
 //                         console.log('err data :: ', err.response.data);
 //                         if (err.response.data.error == "Rate limit exceeded") {
-    
+
 //                             setTimeout(function () {
 //                                 console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
 //                                 availabilitySearchNovember(hotelId)
 //                             }, 9000)
 //                         } 
-    
+
 //                     }
 //                 }
-  
-                
-                
+
+
+
 //                 else{
 
 //                     if(err.code == "ECONNREFUSED"){
@@ -646,7 +666,7 @@ let hotelsNotFound = [];
 //                     }else{
 //                         console.log('NEW ERROR::::: ', err)
 //                     }
-                    
+
 //                 }
 
 
@@ -660,7 +680,7 @@ let hotelsNotFound = [];
 
 
 
-availabilitySearch = (id,checkIn,checkOut) => {
+availabilitySearch = (id, checkIn, checkOut) => {
     let checkInDate = checkIn;
     let checkOutDate = checkOut
 
@@ -718,16 +738,16 @@ availabilitySearch = (id,checkIn,checkOut) => {
         },
     })
         .then(payload => {
-            console.log('QUERY PAYLOAD:::::', payload.data.availHotels);
+            console.log('QUERY PAYLOAD:::::', payload.data.availHotels[0].availRoomRates[0]);
 
             if (payload.status == "200") {
                 console.log('Good request made');
                 console.log('HOTEL AVAILABILITY ROOM RATE LENGTH ::: ', payload.data.availHotels[0].availRoomRates.length);
-                if (payload.data.availHotels[0].availRoomRates.length > 1) {
+                if (payload.data.availHotels[0].availRoomRates.length > 0) {
 
-                    if(goodHotels.includes(hotelId)){
+                    if (goodHotels.includes(hotelId)) {
                         console.log("duplicate:D:D:D:D::D:D:D:D:D:D:D:")
-                    }else{
+                    } else {
                         console.log('THIS HOTEL HAS RATES ::  ');
 
                         goodHotels.push(hotelId);
@@ -736,8 +756,9 @@ availabilitySearch = (id,checkIn,checkOut) => {
 
 
                 } else {
-                    console.log('NO RATES FOR THIS HOTEL ::: ', payload.data.availHotels);
 
+                    console.log('NO RATES FOR THIS HOTEL ::: ', payload.data.availHotels);
+                    console.log('the rates tho L ', payload.data.availHotels[0].availRoomRates.length);
 
                     hotelIdWoRatesInJanuary.push(hotelId);
                 }
@@ -754,52 +775,52 @@ availabilitySearch = (id,checkIn,checkOut) => {
         .catch(err => {
             if (err) {
 
-                if(err.response){
+                if (err.response) {
                     if (err.response.status == "500") {
                         console.log(':::::::::::::SERVER ERROR :::::::::::::: ', err.response.status);
                         console.log('err data :: ', err.response.data);
                         if (err.response.data.errorCode == "HotelNotFound") {
-    
+
                             console.log('THIS HOTEL WAS NOT FOUND:::: ', hotelId);
                             hotelsNotFound.push(hotelId)
                         } else {
                             setTimeout(function () {
                                 console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
-                                availabilitySearch(hotelId,checkInDate,checkOutDate)
+                                availabilitySearch(hotelId, checkInDate, checkOutDate)
                             }, 7000)
                         }
-    
+
                     }
-                    
-    
+
+
                     if (err.response.status == "429") {
                         console.log(':::::::::::::SERVER ERROR TOO MANY ATTEMPTS :::::::::::::: ', err.response.status);
                         console.log('err data :: ', err.response.data);
                         if (err.response.data.error == "Rate limit exceeded") {
-    
+
                             setTimeout(function () {
                                 console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
-                                availabilitySearch(hotelId,checkInDate,checkOutDate)
+                                availabilitySearch(hotelId, checkInDate, checkOutDate)
                             }, 7000)
-                        } 
-    
+                        }
+
                     }
                 }
-  
-                
-                
-                else{
 
-                    if(err.code == "ECONNREFUSED"){
+
+
+                else {
+
+                    if (err.code == "ECONNREFUSED") {
                         console.log(':::::::::::::SERVER ECONNREFUSED :::::::::::::: ', err.code);
                         setTimeout(function () {
                             console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
-                            availabilitySearch(hotelId,checkInDate,checkOutDate)
-                        }, 9000) 
-                    }else{
+                            availabilitySearch(hotelId, checkInDate, checkOutDate)
+                        }, 9000)
+                    } else {
                         console.log('NEW ERROR::::: ', err)
                     }
-                    
+
                 }
 
 
@@ -816,7 +837,7 @@ availabilitySearchJanuary = (id) => {
     let checkOut = "11/15/2021";
 
     let hotelId = id;
-    
+
     console.log('HOTEL ID BEING QUERIED : ', hotelId);
     axios({
         method: "post",
@@ -875,9 +896,9 @@ availabilitySearchJanuary = (id) => {
                 console.log('HOTEL AVAILABILITY ROOM RATE LENGTH ::: ', payload.data.availHotels[0].availRoomRates.length);
                 if (payload.data.availHotels[0].availRoomRates.length >= 1) {
 
-                    if(goodHotels.includes(hotelId)){
+                    if (goodHotels.includes(hotelId)) {
                         console.log("duplicate:D:D:D:D::D:D:D:D:D:D:D:")
-                    }else{
+                    } else {
                         console.log('THIS HOTEL HAS RATES ::  ');
 
                         goodHotels.push(hotelId);
@@ -904,12 +925,12 @@ availabilitySearchJanuary = (id) => {
         .catch(err => {
             if (err) {
 
-                if(err.response){
+                if (err.response) {
                     if (err.response.status == "500") {
                         console.log(':::::::::::::SERVER ERROR :::::::::::::: ', err.response.status);
                         console.log('err data :: ', err.response.data);
                         if (err.response.data.errorCode == "HotelNotFound") {
-    
+
                             console.log('THIS HOTEL WAS NOT FOUND:::: ', hotelId);
                             hotelsNotFound.push(hotelId)
                         } else {
@@ -918,38 +939,38 @@ availabilitySearchJanuary = (id) => {
                                 availabilitySearchJanuary(hotelId)
                             }, 7000)
                         }
-    
+
                     }
-                    
-    
+
+
                     if (err.response.status == "429") {
                         console.log(':::::::::::::SERVER ERROR TOO MANY ATTEMPTS :::::::::::::: ', err.response.status);
                         console.log('err data :: ', err.response.data);
                         if (err.response.data.error == "Rate limit exceeded") {
-    
+
                             setTimeout(function () {
                                 console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
                                 availabilitySearchJanuary(hotelId)
                             }, 7000)
-                        } 
-    
+                        }
+
                     }
                 }
-  
-                
-                
-                else{
 
-                    if(err.code == "ECONNREFUSED"){
+
+
+                else {
+
+                    if (err.code == "ECONNREFUSED") {
                         console.log(':::::::::::::SERVER ECONNREFUSED :::::::::::::: ', err.code);
                         setTimeout(function () {
                             console.log(':::::::::::::::ERROR FIX SET TIME OUT ID :::::::::::::::::::::::::::::::', hotelId)
                             availabilitySearchJanuary(hotelId)
-                        }, 9000) 
-                    }else{
+                        }, 9000)
+                    } else {
                         console.log('NEW ERROR::::: ', err)
                     }
-                    
+
                 }
 
 
@@ -962,12 +983,18 @@ availabilitySearchJanuary = (id) => {
 }
 
 
+// loop without async (used for short lists)
+hiltonVegasArray.map(hotelId => {
+    let checkIn = "2022-02-03"
+    let checkout = "2022-02-07"
+    availabilitySearch(hotelId,checkIn,checkout)
+})
 
 
 
 //GET ALL HOTEL IDS
 async function getAllHotels() {
-    const apiPromises = firstHundredHilton.map(getAvailability)
+    const apiPromises = firstTenHilton.map(getAvailability)
 
     await Promise.all(apiPromises)
 }
@@ -975,14 +1002,14 @@ async function getAllHotels() {
 // GET ALL AVAILABILITY STATUS FROM HOTELS 
 
 async function getAvailability(hotelId) {
-    let checkIn = "2022-03-28"
-    let checkout = "2022-03-30"
+    let checkIn = "2022-05-28"
+    let checkout = "2022-05-30"
 
-    await availabilitySearch(hotelId,checkIn,checkout);
+    await availabilitySearch(hotelId, checkIn, checkout);
 }
 
 
-getAllHotels();
+// getAllHotels();
 
 
 
@@ -992,7 +1019,7 @@ router.get('/november', (req, res, next) => {
     res.status(200).json({
         hotelsToTest: hiltonHotelIdList.length,
         hotelsTested: goodHotels.length + hotelIdWoRatesInJanuary.length + hotelsNotFound.length,
-        hotelsWithRates: goodHotels ,
+        hotelsWithRates: goodHotels,
         hotelsWithOutRates: hotelIdWoRatesInNovember,
         hotelsNotFound: hotelsNotFound,
     })
@@ -1004,16 +1031,16 @@ router.get('/january', (req, res, next) => {
     res.status(200).json({
         batchCount: thirdHundredHilton.length,
         hotelsTested: goodHotels.length + hotelIdWoRatesInJanuary.length + hotelsNotFound.length,
-        hotelsWithRates:{
+        hotelsWithRates: {
             count: goodHotels.length,
             hotels: goodHotels
-        }  ,
+        },
         hotelsWithOutRates: {
             count: hotelIdWoRatesInJanuary.length,
             hotels: hotelIdWoRatesInJanuary,
         },
         hotelsNotFound: {
-            count:hotelsNotFound.length,
+            count: hotelsNotFound.length,
             hotels: hotelsNotFound,
         }
     })
@@ -1023,16 +1050,16 @@ router.get('/february', (req, res, next) => {
     res.status(200).json({
         batchCount: thirdHundredHilton.length,
         hotelsTested: goodHotels.length + hotelIdWoRatesInJanuary.length + hotelsNotFound.length,
-        hotelsWithRates:{
+        hotelsWithRates: {
             count: goodHotels.length,
             hotels: goodHotels
-        }  ,
+        },
         hotelsWithOutRates: {
             count: hotelIdWoRatesInJanuary.length,
             hotels: hotelIdWoRatesInJanuary,
         },
         hotelsNotFound: {
-            count:hotelsNotFound.length,
+            count: hotelsNotFound.length,
             hotels: hotelsNotFound,
         }
     })
@@ -1043,20 +1070,20 @@ router.get('/march', (req, res, next) => {
     let checkIn = "2022-03-28"
     let checkout = "2022-03-30"
     res.status(200).json({
-        checkIn, 
+        checkIn,
         checkout,
-        batchCount: firstHundredHilton.length,
+        batchCount: firstTenHilton.length,
         hotelsTested: goodHotels.length + hotelIdWoRatesInJanuary.length + hotelsNotFound.length,
-        hotelsWithRates:{
+        hotelsWithRates: {
             count: goodHotels.length,
             hotels: goodHotels
-        }  ,
+        },
         hotelsWithOutRates: {
             count: hotelIdWoRatesInJanuary.length,
             hotels: hotelIdWoRatesInJanuary,
         },
         hotelsNotFound: {
-            count:hotelsNotFound.length,
+            count: hotelsNotFound.length,
             hotels: hotelsNotFound,
         }
     })

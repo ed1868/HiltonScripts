@@ -1,0 +1,21 @@
+{
+    "iata": "",
+    "availHotels": [
+        {
+            "stayRange": {
+                "checkin": "2022-01-13",
+                "checkout": "2022-01-15"
+            },
+            "iata": "",
+            "availRoomRates": [],
+            "supplierId": "HILTON",
+            "hotelId": "LRMFM",
+            "status": "Actived"
+        }
+    ],
+    "header": {
+        "distributorId": "OVERSEAS",
+        "version": "v4.0",
+        "token": "1632764383067"
+    }
+}

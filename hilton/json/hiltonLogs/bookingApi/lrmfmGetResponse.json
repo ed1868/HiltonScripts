@@ -1,0 +1,503 @@
+{
+    "hotelId": "LRMFM",
+    "stayRange": {
+        "checkin": "2022-01-13",
+        "checkout": "2022-01-15"
+    },
+    "roomCriteria": {
+        "roomCount": 1,
+        "adultCount": 1,
+        "childCount": 0,
+        "childAges": []
+    },
+    "iata": "",
+    "roomRates": [
+        {
+            "roomId": "K1DG",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                318.78,
+                318.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "D2DG",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                318.78,
+                318.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1DP",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                364.98,
+                364.98
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1TG",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                449.68,
+                449.68
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "D2TG",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                449.68,
+                449.68
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1TP",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                472.78,
+                472.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "D2PP",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                472.78,
+                472.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1FRO",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                580.58,
+                580.58
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "D2FRO",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 4,
+            "amountAfterTax": [
+                580.58,
+                580.58
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1TGU1",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 5,
+            "amountAfterTax": [
+                615.23,
+                615.23
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1TFU1",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 9,
+            "amountAfterTax": [
+                630.63,
+                630.63
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "D2RGD",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 3,
+            "amountAfterTax": [
+                318.78,
+                318.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "roomId": "K1RGD",
+            "rateId": "ODCC23",
+            "currency": "USD",
+            "inventory": 1,
+            "amountAfterTax": [
+                318.78,
+                318.78
+            ],
+            "mealPlan": "RO",
+            "cancelPolicy": {
+                "code": "1D1N_1N",
+                "description": "CXL 1 DAY PRIOR TO ARRIVAL",
+                "cancelPenalties": [
+                    {
+                        "noShow": false,
+                        "cancellable": true,
+                        "cancelDeadline": {
+                            "offsetTimeDropType": "BeforeArrival",
+                            "offsetTimeUnit": "D",
+                            "offsetTimeValue": 1
+                        },
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    },
+                    {
+                        "noShow": true,
+                        "penaltyCharge": {
+                            "chargeBase": "NightBase",
+                            "nights": 1
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "header": {
+        "version": "v4.0",
+        "token": "1632764362554",
+        "supplierId": "HILTON",
+        "distributorId": "OVERSEAS"
+    }
+}

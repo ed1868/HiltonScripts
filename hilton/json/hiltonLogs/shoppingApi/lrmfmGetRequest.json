@@ -1,0 +1,30 @@
+{
+    "url": "https://go-us.derbysoftsec.com/api/go/shoppingengine/v4/shopping/multihotels",
+    "distributorId": "OVERSEAS",
+    "env": "PROD",
+    "header": {
+        "distributorId": "OVERSEAS",
+        "version": "v4.0",
+        "token": "1632764383067"
+    },
+    "hotels": [
+        {
+            "supplierId": "HILTON",
+            "hotelId": "LRMFM",
+            "status": "Actived"
+        }
+    ],
+    "stayRange": {
+        "checkin": "2022-01-13",
+        "checkout": "2022-01-15"
+    },
+    "roomCriteria": {
+        "roomCount": 1,
+        "adultCount": 1,
+        "childCount": 0,
+        "childAges": []
+    },
+    "iata": "",
+    "promoteCode": "",
+    "isAfterPromotion": "false"
+}
