@@ -56,9 +56,9 @@ const index = require('./routes/index');
 app.use('/', index);
 
 
-const hilton = require('./routes/hilton');
+// const hilton = require('./routes/hilton');
 
-app.use('/hilton', hilton);
+// app.use('/hilton', hilton);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
