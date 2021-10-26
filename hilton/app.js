@@ -55,6 +55,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 const index = require('./routes/index');
 app.use('/', index);
 
+const availability = require( './routes/availability');
+
+app.use('/availability' , availability);
 
 // const hilton = require('./routes/hilton');
 
