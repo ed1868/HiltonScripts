@@ -1,4 +1,6 @@
-const IHGHotels = [
+const Hotels =
+[ 
+    [
     {
         "hotelId": "MIANI",
         "hotelName": "Hotel Indigo MIAMI BRICKELL",
@@ -44095,6 +44097,7 @@ const IHGHotels = [
         "supplierId": "IHG",
         "status": "Deactived"
     }
-];
+]]
 
-module.export = IHGHotels;
+
+module.exports = Hotels;
