@@ -112,13 +112,13 @@ async function getActivation(hotelId) {
 }
 
 async function getAllHotels() {
-  const apiPromises = one.map(getActivation)
+  const apiPromises = Hotels.map(getActivation)
 
   await Promise.all(apiPromises)
 }
 
 
-// getAllHotels()
+getAllHotels()
 
 // promoIdList.map(hotelId => {
 //   if(parsedArr.includes(hotelId)){
