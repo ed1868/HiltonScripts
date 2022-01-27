@@ -24,7 +24,7 @@ queryHotel = (hotelProvider,id, checkin, checkout) => {
         url: "https://go3-tn4-aws.derbysoftca.com/api/go/bookingusb/v4/availability",
         headers: {
             Authorization:
-                "2Rrae9SU2G50R3ZmGJ0000011dfc52488ecb444a8b4a1eda945f0f4c",
+                "2Rrae9SU2G50R3ZmGJ0000015a5333652005486d8bc9da2eb0f4780f",
         },
         data: {
             "header": {
