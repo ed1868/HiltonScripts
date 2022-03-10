@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// let Hotels = require('./hiltonDerbyHotels');
+let Hotels = require('./hiltonDerbyHotels');
 const axios = require('axios');
 
 
-let Hotels = require('./ihg');
+// let Hotels = require('./ihg');
 
 // console.log('IHG HOTELS : ', Hotels);
 
@@ -107,18 +107,18 @@ activateHotel = (id) => {
 };
 
 
-async function getActivation(hotelId) {
-  await activateHotel(hotelId)
-}
+// async function getActivation(hotelId) {
+//   await activateHotel(hotelId)
+// }
 
-async function getAllHotels() {
-  const apiPromises = Hotels.map(getActivation)
+// async function getAllHotels() {
+//   const apiPromises = Hotels.map(getActivation)
 
-  await Promise.all(apiPromises)
-}
+//   await Promise.all(apiPromises)
+// }
 
 
-getAllHotels()
+// getAllHotels()
 
 // promoIdList.map(hotelId => {
 //   if(parsedArr.includes(hotelId)){
@@ -132,36 +132,138 @@ const idArray = [];
 
 getAllHotelIds = (arr) => {
 
-  // console.log('Given Array : : : ', arr);
+  console.log('Given Array : : : ', arr);
 
   // console.log(`HOTELS---- ${arr[0]}`);
-  arr.map(hotel => {
-    console.log("el hotel - ", hotel.status)
-    if (hotel.status && hotel.status == "Actived") {
-      console.log('entroooooo ---', hotel.hotelId)
+  // arr.map(hotel => {
+  //   console.log("el hotel - ", hotel.status)
+  //   if (hotel.status && hotel.status == "Actived") {
+  //     console.log('entroooooo ---', hotel.hotelId)
 
-        idArray.push(hotel.hotelId);
+  //       idArray.push(hotel.hotelId);
 
-    }
-
-
+  //   }
 
 
-    console.log('FINAL ARRAY::::', idArray);
-    return idArray;
 
-  })
+
+  //   console.log('FINAL ARRAY::::', idArray);
+  //   return idArray;
+
+  // })
 }
+
+const hotelArrays = [];
+
+//CONVERT TO CSV
+
+
+function exportCSVFile(headers, items, fileTitle) {
+
+  
+  if (headers) {
+      items.unshift(headers);
+  }
+
+  // Convert Object to JSON
+  var jsonObject = JSON.stringify(items);
+
+  var csv = convertToCSV(jsonObject);
+
+  var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
+
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  if (navigator.msSaveBlob) { // IE 10+
+      navigator.msSaveBlob(blob, exportedFilenmae);
+  } else {
+      var link = document.createElement("a");
+      if (link.download !== undefined) { // feature detection
+          // Browsers that support HTML5 download attribute
+          var url = URL.createObjectURL(blob);
+          link.setAttribute("href", url);
+          link.setAttribute("download", exportedFilenmae);
+          link.style.visibility = 'hidden';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      }
+  }
+}
+
+function download(){
+var headers = {
+    model: 'Phone Model'.replace(/,/g, ''), // remove commas to avoid errors
+    chargers: "Chargers",
+    cases: "Cases",
+    earphones: "Earphones"
+};
+
+
+
+  
+itemsNotFormatted = [
+];
+
+var itemsFormatted = [];
+
+
+Hotels[0].map(hotel => {
+  
+  if(hotel.hotelName && hotel.hotelId){
+    let newHotel = {
+      name: hotel.hotelName,
+      hotelId: hotel.hotelId
+    }
+  console.log('NEW HOTELLL : ', newHotel);
+    itemsFormatted.push(newHotel);
+  }else{
+    console.log('it doesnt have an id');
+  }  
+  });
+
+
+// format the data
+itemsNotFormatted.forEach((item) => {
+    itemsFormatted.push({
+        // name: item.model.replace(/,/g, ''), // remove commas to avoid errors,
+        name:item.name,
+        hotelId: item.hotelId
+    });
+});
+
+var fileTitle = 'hiltonHotelDerby'; // or 'my-unique-title'
+
+exportCSVFile(headers, itemsFormatted, fileTitle); // call the exportCSVFile() function to process the JSON and trigger the download
+}
+
+
+download();
+
+
+
+
+
+
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
 
-Hotels.map(hotel => {
-  getAllHotelIds(hotel);
-})
+Hotels[0].map(hotel => {
   
+if(hotel.hotelName && hotel.hotelId){
+  let newHotel = {
+    name: hotel.hotelName,
+    hotelId: hotel.hotelId
+  }
+console.log('NEW HOTELLL : ', newHotel);
+  hotelArrays.push(newHotel);
+}else{
+  console.log('it doesnt have an id');
+}  
+});
+  console.log('dghfjdhsfjkdshfss', hotelArrays);
   res.status(200).json({
-    allHotelIds: idArray
+    allHotelIds: hotelArrays
   })
 
   // res.status(200).json({
